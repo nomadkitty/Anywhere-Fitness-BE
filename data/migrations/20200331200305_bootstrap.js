@@ -7,12 +7,9 @@ exports.up = function(knex) {
         .notNullable()
         .unique();
       tbl.string("password", 128).notNullable();
-      tbl
-        .string("email", 128)
-        .notNullable()
-        .unique();
-      tbl.string("first_name", 128).notNullable();
-      tbl.string("last_name", 128).notNullable();
+      tbl.string("email", 128).unique();
+      tbl.string("first_name", 128);
+      tbl.string("last_name", 128);
       tbl
         .boolean("isInstructor")
         .defaultTo(false)
